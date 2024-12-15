@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cju7iu6jptnkt"]
+
+[ext_resource type="Script" path="res://scripts/http_request_draft.gd" id="1_dfnj3"]
+[ext_resource type="Texture2D" uid="uid://c6mcjuyeyl6ix" path="res://assets/textures/mayreel-lp.png" id="2_65jwa"]
+
+[node name="HttpRequestDraft" type="Node"]
+script = ExtResource("1_dfnj3")
+image = ExtResource("2_65jwa")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

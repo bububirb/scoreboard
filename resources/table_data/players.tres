@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="TableData" load_steps=13 format=3 uid="uid://dckprmpyk28e8"]
+
+[ext_resource type="Script" path="res://scripts/resources/table_cell_data.gd" id="1_u7ntl"]
+[ext_resource type="Script" path="res://scripts/resources/table_row_data.gd" id="2_ukfub"]
+[ext_resource type="Script" path="res://scripts/resources/table_data.gd" id="3_7qjtw"]
+
+[sub_resource type="Resource" id="Resource_abvap"]
+script = ExtResource("1_u7ntl")
+text = "Unnamed Player"
+
+[sub_resource type="Resource" id="Resource_0wrpm"]
+script = ExtResource("1_u7ntl")
+text = "15"
+
+[sub_resource type="Resource" id="Resource_yp8kb"]
+script = ExtResource("2_ukfub")
+cells = Array[ExtResource("1_u7ntl")]([SubResource("Resource_abvap"), SubResource("Resource_0wrpm")])
+
+[sub_resource type="Resource" id="Resource_4jlfs"]
+script = ExtResource("1_u7ntl")
+text = "Another Player"
+
+[sub_resource type="Resource" id="Resource_lfya2"]
+script = ExtResource("1_u7ntl")
+text = "12"
+
+[sub_resource type="Resource" id="Resource_5iaxy"]
+script = ExtResource("2_ukfub")
+cells = Array[ExtResource("1_u7ntl")]([SubResource("Resource_4jlfs"), SubResource("Resource_lfya2")])
+
+[sub_resource type="Resource" id="Resource_pup7x"]
+script = ExtResource("1_u7ntl")
+text = "Yet Another Player"
+
+[sub_resource type="Resource" id="Resource_eq5dr"]
+script = ExtResource("1_u7ntl")
+text = "10"
+
+[sub_resource type="Resource" id="Resource_hydux"]
+script = ExtResource("2_ukfub")
+cells = Array[ExtResource("1_u7ntl")]([SubResource("Resource_pup7x"), SubResource("Resource_eq5dr")])
+
+[resource]
+script = ExtResource("3_7qjtw")
+rows = Array[ExtResource("2_ukfub")]([SubResource("Resource_yp8kb"), SubResource("Resource_5iaxy"), SubResource("Resource_hydux")])

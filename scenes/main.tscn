@@ -1,0 +1,271 @@
+[gd_scene load_steps=27 format=3 uid="uid://n5o1ibuivmw3"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_2m7sd"]
+[ext_resource type="Theme" uid="uid://yrt6t4qx200g" path="res://resources/theme/default_theme.tres" id="1_f62j1"]
+[ext_resource type="PackedScene" uid="uid://qjf0dqvw5p0j" path="res://scenes/list/list.tscn" id="3_bsho0"]
+[ext_resource type="FontVariation" uid="uid://drw115handnxq" path="res://assets/fonts/default_bold.tres" id="3_m2o8y"]
+[ext_resource type="Shader" path="res://resources/shaders/alpha_gradient.gdshader" id="3_mwvwm"]
+[ext_resource type="Script" path="res://scripts/resources/list_item_property_data.gd" id="4_2rl1r"]
+[ext_resource type="PackedScene" uid="uid://bbxxf6e7mk5r5" path="res://scenes/discord_webhook.tscn" id="4_48jo8"]
+[ext_resource type="Script" path="res://scripts/resources/player_data.gd" id="5_ptmus"]
+[ext_resource type="PackedScene" uid="uid://do2iqe0wbpkng" path="res://scenes/panels/players.tscn" id="7_uaomn"]
+[ext_resource type="PackedScene" uid="uid://dhfr5uea38pbu" path="res://scenes/webhook_display.tscn" id="8_it27y"]
+
+[sub_resource type="Resource" id="Resource_o6slw"]
+script = ExtResource("4_2rl1r")
+key = "name"
+value = "name"
+
+[sub_resource type="Resource" id="Resource_em53s"]
+script = ExtResource("4_2rl1r")
+key = "score"
+value = 0
+
+[sub_resource type="Resource" id="Resource_8rbxc"]
+script = ExtResource("4_2rl1r")
+key = "queue_index"
+value = 0
+
+[sub_resource type="Resource" id="Resource_vlw35"]
+script = ExtResource("4_2rl1r")
+key = "streak"
+value = 0
+
+[sub_resource type="Resource" id="Resource_tuq62"]
+script = ExtResource("5_ptmus")
+properties = Array[ExtResource("4_2rl1r")]([SubResource("Resource_o6slw"), SubResource("Resource_em53s"), SubResource("Resource_8rbxc"), SubResource("Resource_vlw35")])
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qj1kx"]
+shader = ExtResource("3_mwvwm")
+shader_parameter/strength = 0.25
+shader_parameter/power = 0.2
+shader_parameter/flip = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5fkj7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bj1fo"]
+font = ExtResource("3_m2o8y")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vr3e"]
+bg_color = Color(0, 0.4, 0.8, 0.2)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.25, 0.5, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvyhb"]
+bg_color = Color(0.13, 0.13, 0.13, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.5, 0.5, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2x5w"]
+shader = ExtResource("3_mwvwm")
+shader_parameter/strength = 0.25
+shader_parameter/power = 0.2
+shader_parameter/flip = false
+
+[sub_resource type="Resource" id="Resource_ux7rd"]
+script = ExtResource("4_2rl1r")
+key = "name"
+value = "name"
+
+[sub_resource type="Resource" id="Resource_mqu50"]
+script = ExtResource("4_2rl1r")
+key = "score"
+value = 0
+
+[sub_resource type="Resource" id="Resource_tspij"]
+script = ExtResource("4_2rl1r")
+key = "queue_index"
+value = 0
+
+[sub_resource type="Resource" id="Resource_rxpwm"]
+script = ExtResource("4_2rl1r")
+key = "streak"
+value = 0
+
+[sub_resource type="Resource" id="Resource_yp3eg"]
+script = ExtResource("5_ptmus")
+properties = Array[ExtResource("4_2rl1r")]([SubResource("Resource_ux7rd"), SubResource("Resource_mqu50"), SubResource("Resource_tspij"), SubResource("Resource_rxpwm")])
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f62j1")
+script = ExtResource("1_2m7sd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftTabContainer" type="TabContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+
+[node name="Queue" type="PanelContainer" parent="HBoxContainer/LeftTabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftTabContainer/Queue"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="QueueList" parent="HBoxContainer/LeftTabContainer/Queue/MarginContainer" instance=ExtResource("3_bsho0")]
+layout_mode = 2
+headers = SubResource("Resource_tuq62")
+sort_property = "queue_index"
+show_column_name = true
+show_column_streak = true
+
+[node name="CenterTabContainer" type="TabContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+current_tab = 0
+
+[node name="Match" type="VBoxContainer" parent="HBoxContainer/CenterTabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+metadata/_tab_index = 0
+
+[node name="CurrentMatchPanel" type="PanelContainer" parent="HBoxContainer/CenterTabContainer/Match"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MatchPlayersContainer" type="VBoxContainer" parent="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel"]
+layout_mode = 2
+
+[node name="Player1Button" type="Button" parent="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer"]
+material = SubResource("ShaderMaterial_qj1kx")
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"MatchButton"
+theme_override_fonts/font = ExtResource("3_m2o8y")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_5fkj7")
+text = "Player 1"
+
+[node name="VersusLabel" type="Label" parent="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer"]
+visible = false
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+text = "vs"
+label_settings = SubResource("LabelSettings_bj1fo")
+horizontal_alignment = 1
+
+[node name="VersusButton" type="Button" parent="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_m2o8y")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vr3e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1vr3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mvyhb")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5fkj7")
+text = "vs"
+
+[node name="Player2Button" type="Button" parent="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer"]
+material = SubResource("ShaderMaterial_d2x5w")
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"MatchButton"
+theme_override_fonts/font = ExtResource("3_m2o8y")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5fkj7")
+text = "Player 2"
+
+[node name="ControlsPanel" type="PanelContainer" parent="HBoxContainer/CenterTabContainer/Match"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CenterTabContainer/Match/ControlsPanel"]
+layout_mode = 2
+
+[node name="CommitButton" type="Button" parent="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="Players" parent="HBoxContainer/CenterTabContainer" instance=ExtResource("7_uaomn")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="RightTabContainer" type="TabContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+
+[node name="Leaderboard" type="PanelContainer" parent="HBoxContainer/RightTabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/RightTabContainer/Leaderboard"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="LeaderboardList" parent="HBoxContainer/RightTabContainer/Leaderboard/MarginContainer" instance=ExtResource("3_bsho0")]
+layout_mode = 2
+headers = SubResource("Resource_yp3eg")
+sort_property = "score"
+sort_reversed = true
+show_column_name = true
+show_column_score = true
+
+[node name="DiscordWebhook" parent="." instance=ExtResource("4_48jo8")]
+
+[node name="RenderViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1024, 640)
+render_target_update_mode = 4
+
+[node name="WebhookDisplay" parent="RenderViewport" instance=ExtResource("8_it27y")]
+
+[connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer/Player1Button" to="." method="_on_player_button_pressed" binds= [0]]
+[connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer/VersusButton" to="." method="_on_player_button_pressed" binds= [-1]]
+[connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer/Player2Button" to="." method="_on_player_button_pressed" binds= [1]]
+[connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer/CommitButton" to="." method="_on_commit_button_pressed"]

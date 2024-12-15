@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ListData" load_steps=3 format=3 uid="uid://b0316b4homa6s"]
+
+[ext_resource type="Script" path="res://scripts/resources/list_data.gd" id="1_a7ll7"]
+[ext_resource type="Script" path="res://scripts/resources/list_item_data.gd" id="1_e7knq"]
+
+[resource]
+script = ExtResource("1_a7ll7")
+items = Array[ExtResource("1_e7knq")]([])

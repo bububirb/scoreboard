@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://qjf0dqvw5p0j"]
+
+[ext_resource type="Script" path="res://scripts/list/list.gd" id="1_hicuk"]
+[ext_resource type="Script" path="res://scripts/resources/list_item_property_data.gd" id="2_71g42"]
+[ext_resource type="Script" path="res://scripts/resources/player_data.gd" id="3_gwr04"]
+
+[sub_resource type="Resource" id="Resource_5yjmc"]
+script = ExtResource("2_71g42")
+key = "name"
+value = "name"
+
+[sub_resource type="Resource" id="Resource_voi2y"]
+script = ExtResource("2_71g42")
+key = "score"
+value = 0
+
+[sub_resource type="Resource" id="Resource_l176c"]
+script = ExtResource("2_71g42")
+key = "queue_index"
+value = 0
+
+[sub_resource type="Resource" id="Resource_v0y0y"]
+script = ExtResource("2_71g42")
+key = "streak"
+value = 0
+
+[sub_resource type="Resource" id="Resource_eyerk"]
+script = ExtResource("3_gwr04")
+properties = Array[ExtResource("2_71g42")]([SubResource("Resource_5yjmc"), SubResource("Resource_voi2y"), SubResource("Resource_l176c"), SubResource("Resource_v0y0y")])
+
+[node name="List" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hicuk")
+headers = SubResource("Resource_eyerk")
+show_column_name = false
+show_column_score = false
+show_column_queue_index = false
+show_column_streak = false

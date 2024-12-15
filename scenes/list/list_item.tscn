@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2f6yghoic0c8"]
+
+[ext_resource type="Script" path="res://scripts/list/list_item.gd" id="1_3d4yk"]
+[ext_resource type="StyleBox" uid="uid://m0tonqgeeo5q" path="res://resources/style_box/selection_highlight.tres" id="2_uq6sa"]
+
+[node name="ListItem" type="Control"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 40.0
+script = ExtResource("1_3d4yk")
+
+[node name="SelectionHighlight" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_uq6sa")
+
+[node name="Items" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectionButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SelectionButton"

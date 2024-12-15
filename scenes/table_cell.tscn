@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://de3apt25mcfqg"]
+
+[ext_resource type="Script" path="res://scripts/table_cell.gd" id="1_e8rii"]
+
+[node name="TableCell" type="Label"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 20.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_e8rii")

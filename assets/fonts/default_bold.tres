@@ -1,0 +1,13 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://drw115handnxq"]
+
+[ext_resource type="FontFile" uid="uid://bb7mhrrb0cspa" path="res://assets/fonts/inter_variable.ttf" id="1_82coh"]
+
+[resource]
+base_font = ExtResource("1_82coh")
+variation_opentype = {
+1936486004: 0,
+2003265652: 700
+}
+opentype_features = {
+1668689973: 1
+}

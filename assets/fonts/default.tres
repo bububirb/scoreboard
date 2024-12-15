@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bt7adoe7t5oqj"]
+
+[ext_resource type="FontFile" uid="uid://bb7mhrrb0cspa" path="res://assets/fonts/inter_variable.ttf" id="1_fxsl8"]
+
+[resource]
+base_font = ExtResource("1_fxsl8")
+opentype_features = {
+1668689973: 1
+}

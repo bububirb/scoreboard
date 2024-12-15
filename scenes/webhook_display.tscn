@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhfr5uea38pbu"]
+
+[ext_resource type="Theme" uid="uid://b0xmtrnlq528" path="res://resources/theme/display_theme.tres" id="1_pggi7"]
+[ext_resource type="Script" path="res://scripts/webhook_display.gd" id="2_eu28j"]
+[ext_resource type="PackedScene" uid="uid://qjf0dqvw5p0j" path="res://scenes/list/list.tscn" id="4_kc1bj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqpf4"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.2, 0.6, 1, 0.101961)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep8oj"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.6, 1, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="WebhookDisplay" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pggi7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mqpf4")
+script = ExtResource("2_eu28j")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ep8oj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PlayersList" parent="PanelContainer/VBoxContainer" instance=ExtResource("4_kc1bj")]
+layout_mode = 2
+size_flags_vertical = 3
+sort_property = "score"
+sort_reversed = true
+show_column_name = true
+show_column_score = true
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed mi ut dui condimentum varius. Donec eget nisi justo. Etiam eget massa aliquam leo suscipit mollis id a metus. Duis tristique mi vitae nisl venenatis, et aliquet eros iaculis. Sed blandit justo in sem tincidunt pretium."
+autowrap_mode = 3
+text_overrun_behavior = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+value = 37.0
+
+[node name="TagsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/TagsContainer"]
+layout_mode = 2
+text = "Tag"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/TagsContainer"]
+layout_mode = 2
+text = "Some Other Tag"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/TagsContainer"]
+layout_mode = 2
+text = "Git Gud at Naming"
+
+[node name="NextMatchContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/NextMatchContainer"]
+layout_mode = 2
+text = "Next match:"
+
+[node name="NextMatchLabel" type="Label" parent="PanelContainer/VBoxContainer/NextMatchContainer"]
+layout_mode = 2

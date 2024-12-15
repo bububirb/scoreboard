@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ur7tofs0w7qi"]
+
+[ext_resource type="Script" path="res://scripts/tests/data_update_test.gd" id="1_cpcrp"]
+[ext_resource type="Resource" uid="uid://b0316b4homa6s" path="res://resources/list_data/players.tres" id="2_uo5ki"]
+[ext_resource type="PackedScene" uid="uid://qjf0dqvw5p0j" path="res://scenes/list/list.tscn" id="5_h46ae"]
+
+[node name="DataUpdateTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cpcrp")
+list_data = ExtResource("2_uo5ki")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="List" parent="HBoxContainer" instance=ExtResource("5_h46ae")]
+layout_mode = 2
+
+[node name="List2" parent="HBoxContainer" instance=ExtResource("5_h46ae")]
+layout_mode = 2

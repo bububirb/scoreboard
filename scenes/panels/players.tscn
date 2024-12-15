@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://do2iqe0wbpkng"]
+
+[ext_resource type="Script" path="res://scripts/panels/players.gd" id="1_bpq2g"]
+[ext_resource type="PackedScene" uid="uid://qjf0dqvw5p0j" path="res://scenes/list/list.tscn" id="1_plc2g"]
+[ext_resource type="Texture2D" uid="uid://ieyk52a6wdua" path="res://assets/icons/new.svg" id="1_wukdw"]
+[ext_resource type="Script" path="res://scripts/resources/list_item_property_data.gd" id="4_67f5b"]
+[ext_resource type="Script" path="res://scripts/resources/player_data.gd" id="5_o32w5"]
+[ext_resource type="Texture2D" uid="uid://ciqmrkxpojdn4" path="res://assets/icons/delete.svg" id="6_mcj6j"]
+[ext_resource type="Texture2D" uid="uid://1rb8b2qgcr1t" path="res://assets/icons/up.svg" id="7_10k5q"]
+[ext_resource type="Texture2D" uid="uid://b06jolkd8pju8" path="res://assets/icons/down.svg" id="8_fukp1"]
+
+[sub_resource type="Resource" id="Resource_wfajs"]
+script = ExtResource("4_67f5b")
+key = "name"
+value = "name"
+
+[sub_resource type="Resource" id="Resource_cj5ou"]
+script = ExtResource("4_67f5b")
+key = "score"
+value = 0
+
+[sub_resource type="Resource" id="Resource_kfpsj"]
+script = ExtResource("4_67f5b")
+key = "queue_index"
+value = 0
+
+[sub_resource type="Resource" id="Resource_2uofk"]
+script = ExtResource("4_67f5b")
+key = "streak"
+value = 0
+
+[sub_resource type="Resource" id="Resource_6gsmb"]
+script = ExtResource("5_o32w5")
+properties = Array[ExtResource("4_67f5b")]([SubResource("Resource_wfajs"), SubResource("Resource_cj5ou"), SubResource("Resource_kfpsj"), SubResource("Resource_2uofk")])
+
+[node name="Players" type="VBoxContainer"]
+auto_translate_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bpq2g")
+
+[node name="AddPlayerContainer" type="HBoxContainer" parent="."]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="PlayerNameInput" type="LineEdit" parent="AddPlayerContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Add Player"
+
+[node name="AddPlayerButton" type="Button" parent="AddPlayerContainer/PlayerNameInput"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("1_wukdw")
+icon_alignment = 1
+
+[node name="PlayersList" parent="." instance=ExtResource("1_plc2g")]
+unique_name_in_owner = true
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_vertical = 3
+headers = SubResource("Resource_6gsmb")
+show_column_name = true
+show_column_score = true
+show_column_queue_index = true
+show_column_streak = true
+
+[node name="BottomContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RemoveButton" type="Button" parent="BottomContainer"]
+layout_mode = 2
+text = "Remove"
+icon = ExtResource("6_mcj6j")
+
+[node name="MarginContainer" type="MarginContainer" parent="BottomContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoveUpButton" type="Button" parent="BottomContainer"]
+layout_mode = 2
+icon = ExtResource("7_10k5q")
+
+[node name="MoveDownButton" type="Button" parent="BottomContainer"]
+layout_mode = 2
+icon = ExtResource("8_fukp1")
+
+[connection signal="pressed" from="BottomContainer/RemoveButton" to="." method="_on_remove_button_pressed"]
+[connection signal="pressed" from="BottomContainer/MoveUpButton" to="." method="_on_move_up_button_pressed"]
+[connection signal="pressed" from="BottomContainer/MoveDownButton" to="." method="_on_move_down_button_pressed"]
