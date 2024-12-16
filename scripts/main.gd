@@ -37,15 +37,31 @@ var player_2: PlayerData:
 @onready var webhook_display: PanelContainer = $RenderViewport/WebhookDisplay
 
 func _ready() -> void:
+	IO.players_list_updated.connect(_on_io_players_list_updated)
+	players_list = IO.players_list
+	assign_match_players()
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		IO.flush_redo()
+		get_tree().quit()
+
+func _on_io_players_list_updated():
 	players_list = IO.players_list
 	assign_match_players()
 
 func _on_players_list_changed():
 	assign_match_players()
-	IO.save_player_data.call_deferred()
+	IO.save_player_data()
 
 func _on_player_button_pressed(index: int) -> void:
 	selected_player = index
+
+func _on_undo_button_pressed() -> void:
+	IO.undo()
+
+func _on_redo_button_pressed() -> void:
+	IO.redo()
 
 func _on_commit_button_pressed() -> void:
 	if players_list.items.size() >= 2:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://n5o1ibuivmw3"]
+[gd_scene load_steps=29 format=3 uid="uid://n5o1ibuivmw3"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2m7sd"]
 [ext_resource type="Theme" uid="uid://yrt6t4qx200g" path="res://resources/theme/default_theme.tres" id="1_f62j1"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bbxxf6e7mk5r5" path="res://scenes/discord_webhook.tscn" id="4_48jo8"]
 [ext_resource type="Script" path="res://scripts/resources/player_data.gd" id="5_ptmus"]
 [ext_resource type="PackedScene" uid="uid://do2iqe0wbpkng" path="res://scenes/panels/players.tscn" id="7_uaomn"]
+[ext_resource type="Texture2D" uid="uid://bplcma73efn10" path="res://assets/icons/left_arrow.svg" id="8_25hag"]
 [ext_resource type="PackedScene" uid="uid://dhfr5uea38pbu" path="res://scenes/webhook_display.tscn" id="8_it27y"]
+[ext_resource type="Texture2D" uid="uid://bf6l15apo0w0t" path="res://assets/icons/right_arrow.svg" id="9_lr7yx"]
 
 [sub_resource type="Resource" id="Resource_o6slw"]
 script = ExtResource("4_2rl1r")
@@ -219,6 +221,17 @@ size_flags_horizontal = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CenterTabContainer/Match/ControlsPanel"]
 layout_mode = 2
 
+[node name="UndoButton" type="Button" parent="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Undo"
+icon = ExtResource("8_25hag")
+
+[node name="RedoButton" type="Button" parent="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Redo"
+icon = ExtResource("9_lr7yx")
+icon_alignment = 2
+
 [node name="CommitButton" type="Button" parent="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -268,4 +281,6 @@ render_target_update_mode = 4
 [connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer/Player1Button" to="." method="_on_player_button_pressed" binds= [0]]
 [connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer/VersusButton" to="." method="_on_player_button_pressed" binds= [-1]]
 [connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/CurrentMatchPanel/MatchPlayersContainer/Player2Button" to="." method="_on_player_button_pressed" binds= [1]]
+[connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer/UndoButton" to="." method="_on_undo_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer/RedoButton" to="." method="_on_redo_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer/CommitButton" to="." method="_on_commit_button_pressed"]
