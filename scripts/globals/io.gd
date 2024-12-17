@@ -24,6 +24,12 @@ signal players_list_updated
 func _init() -> void:
 	load_player_data()
 
+func _ready() -> void:
+	load_settings()
+
+func _exit_tree() -> void:
+	save_settings()
+
 func save_settings() -> void:
 	var dir = DirAccess.open(CURRENT_SETTINGS_PATH)
 	if not dir:

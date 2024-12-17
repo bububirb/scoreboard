@@ -36,9 +36,12 @@ var player_2: PlayerData:
 @onready var leaderboard_list: List = $HBoxContainer/RightTabContainer/Leaderboard/MarginContainer/LeaderboardList
 @onready var webhook_display: PanelContainer = $RenderViewport/WebhookDisplay
 
+@onready var online_button: CheckButton = $HBoxContainer/CenterTabContainer/Match/ControlsPanel/HBoxContainer/OnlineButton
+
 func _ready() -> void:
 	IO.players_list_updated.connect(_on_io_players_list_updated)
 	players_list = IO.players_list
+	online_button.button_pressed = IO.settings.online
 	assign_match_players()
 
 func _notification(what):
@@ -74,7 +77,12 @@ func _on_commit_button_pressed() -> void:
 	selected_player = 0
 	players_list.changed.emit()
 	
-	send_to_webhook()
+	if IO.settings.online:
+		send_to_webhook()
+
+func _on_online_button_toggled(toggled_on: bool) -> void:
+	IO.settings.online = toggled_on
+	IO.save_settings()
 
 func send_to_webhook() -> void:
 	await RenderingServer.frame_post_draw
