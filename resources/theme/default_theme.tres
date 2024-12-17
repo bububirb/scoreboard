@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=28 format=3 uid="uid://yrt6t4qx200g"]
+[gd_resource type="Theme" load_steps=30 format=3 uid="uid://yrt6t4qx200g"]
 
 [ext_resource type="StyleBox" uid="uid://ii0r5ta56xxm" path="res://resources/style_box/card.tres" id="1_txtax"]
 [ext_resource type="StyleBox" uid="uid://dpmmo451iqe2j" path="res://resources/style_box/tab_container_panel.tres" id="2_bk6nh"]
 [ext_resource type="FontVariation" uid="uid://bt7adoe7t5oqj" path="res://assets/fonts/default.tres" id="2_dxkuv"]
+[ext_resource type="Texture2D" uid="uid://dprcqjklddbor" path="res://assets/textures/ui/check-button-checked.svg" id="2_xlvso"]
+[ext_resource type="Texture2D" uid="uid://bymd2tjjwwhg2" path="res://assets/textures/ui/check-button-unchecked.svg" id="3_5poi0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4oml"]
 content_margin_left = 6.0
@@ -278,6 +280,8 @@ Button/styles/normal = SubResource("StyleBoxFlat_ebh3s")
 Button/styles/pressed = SubResource("StyleBoxFlat_sjh21")
 CardContainer/base_type = &"PanelContainer"
 CardContainer/styles/panel = ExtResource("1_txtax")
+CheckButton/icons/checked = ExtResource("2_xlvso")
+CheckButton/icons/unchecked = ExtResource("3_5poi0")
 ItemList/colors/guide_color = Color(0.701961, 0.701961, 0.701961, 0)
 ItemList/constants/v_separation = 8
 ItemList/styles/focus = SubResource("StyleBoxEmpty_p2bt0")
