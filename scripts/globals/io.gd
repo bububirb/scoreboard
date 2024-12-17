@@ -1,6 +1,14 @@
 extends Node
 
 @export var players_list: ListData
+@export var settings: Settings
+
+const VERSION = "1.1"
+
+const SETTINGS_PATH = "user://settings/"
+const SETTINGS_FILE = "settings.tres"
+@onready var CURRENT_SETTINGS_PATH: String = SETTINGS_PATH.path_join(VERSION)
+@onready var CURRENT_SETTINGS_FILE: String = CURRENT_SETTINGS_PATH.path_join(SETTINGS_FILE)
 
 const PLAYER_DATA_PATH = "user://player_data/"
 const PLAYER_DATA_FILE = "players.tres"
@@ -16,19 +24,36 @@ signal players_list_updated
 func _init() -> void:
 	load_player_data()
 
+func save_settings() -> void:
+	var dir = DirAccess.open(CURRENT_SETTINGS_PATH)
+	if not dir:
+		DirAccess.make_dir_recursive_absolute(CURRENT_SETTINGS_PATH)
+		dir = DirAccess.open(CURRENT_SETTINGS_PATH)
+	ResourceSaver.save(settings, CURRENT_SETTINGS_FILE)
+
+func load_settings() -> void:
+	var dir = DirAccess.open(CURRENT_SETTINGS_PATH)
+	if dir:
+		if dir.file_exists(CURRENT_SETTINGS_FILE):
+			settings = ResourceLoader.load(CURRENT_SETTINGS_FILE)
+			return
+	# If save directory or save file does not exist, create a new one
+	settings = Settings.new()
+
 func save_player_data() -> void:
 	if undo_lock:
 		return
 	flush_redo()
 	var dir = DirAccess.open(PLAYER_DATA_PATH)
 	if not dir:
-		DirAccess.open("user://").make_dir("player_data")
+		DirAccess.make_dir_recursive_absolute(PLAYER_DATA_PATH)
+		dir = DirAccess.open(PLAYER_DATA_PATH)
 	var files: Array = dir.get_files()
 	files.sort_custom(sort_natural)
 	files.reverse()
 	for i in files.size():
 		dir.rename(files[i], PLAYER_DATA_BACKUP + str(files.size() - i) + ".tres")
-	ResourceSaver.save(players_list, PLAYER_DATA_PATH + PLAYER_DATA_FILE)
+	ResourceSaver.save(players_list, PLAYER_DATA_PATH.path_join(PLAYER_DATA_FILE))
 	flush_undo()
 
 func load_player_data() -> void:
