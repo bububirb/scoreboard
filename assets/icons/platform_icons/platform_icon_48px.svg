@@ -2,14 +2,14 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="32"
-   height="32"
-   viewBox="0 0 32 32"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
-   sodipodi:docname="platform_icon_32px.svg"
-   inkscape:export-filename="platform_icon_32px.png"
+   sodipodi:docname="platform_icon_48px.svg"
+   inkscape:export-filename="platform_icon_48px.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,10 +27,10 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="20.15625"
-     inkscape:cx="15.131783"
-     inkscape:cy="16.347287"
+     showgrid="false"
+     inkscape:zoom="13.4375"
+     inkscape:cx="24.037209"
+     inkscape:cy="24"
      inkscape:window-width="1588"
      inkscape:window-height="858"
      inkscape:window-x="0"
@@ -42,8 +42,8 @@
        units="px"
        originx="0"
        originy="0"
-       spacingx="0.5"
-       spacingy="0.5"
+       spacingx="1"
+       spacingy="1"
        empcolor="#0099e5"
        empopacity="0.30196078"
        color="#0099e5"
@@ -52,7 +52,7 @@
        dotted="false"
        gridanglex="30"
        gridanglez="30"
-       visible="true" />
+       visible="false" />
   </sodipodi:namedview>
   <defs
      id="defs1">
@@ -61,7 +61,7 @@
        id="path-effect20"
        is_visible="true"
        lpeversion="1"
-       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.5,0,1 @ F,0,0,1,0,0,0,1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.66666667,0,1 @ F,0,0,1,0,0,0,1"
        radius="0.5"
        unit="px"
        method="auto"
@@ -78,7 +78,7 @@
        id="path-effect19"
        is_visible="true"
        lpeversion="1"
-       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.5,0,1 @ F,0,0,1,0,0,0,1"
+       nodesatellites_param="F,0,1,1,0,0,0,1 @ F,0,0,1,0,0.66666667,0,1 @ F,0,0,1,0,0,0,1"
        radius="0.5"
        unit="px"
        method="auto"
@@ -259,112 +259,114 @@
        x2="32"
        y2="0"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.5,0,0,0.50000002,7.9999995,7.9999998)" />
+       gradientTransform="matrix(0.75000002,0,0,0.75000003,11.999999,11.999999)" />
     <linearGradient
        id="linearGradient3"
        inkscape:collect="always">
       <stop
          style="stop-color:#3fcff5;stop-opacity:1;"
-         offset="0.00000003"
+         offset="0.0001"
          id="stop3" />
       <stop
          style="stop-color:#6f49eb;stop-opacity:1;"
-         offset="1"
+         offset="0.99999994"
          id="stop4" />
     </linearGradient>
     <mask
        maskUnits="userSpaceOnUse"
        id="mask1">
       <g
-         id="g4"
-         transform="translate(-2.5)"
+         id="g14"
+         transform="matrix(1.5,0,0,1.5,-3.75,0)"
          style="stroke-width:1;stroke-dasharray:none">
         <rect
-           style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:16;stroke-opacity:1"
-           id="rect2"
-           width="10"
-           height="4"
-           x="15"
-           y="8.5"
+           style="fill:none;stroke:#ffffff;stroke-width:1.33333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:16;stroke-opacity:1"
+           id="rect12"
+           width="9.333333"
+           height="2.6666663"
+           x="15.166667"
+           y="8.666667"
            ry="0.5" />
         <path
-           style="fill:none;stroke:url(#linearGradient5);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-           d="M 15,10.5 H 13.5 A 0.5,0.5 135 0 0 13,11 v 7"
-           id="path2"
+           style="fill:none;stroke:url(#linearGradient14);stroke-width:1.33333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           d="M 14.5,10 H 13.166667 A 0.66666667,0.66666667 135 0 0 12.5,10.666667 v 8.666666"
+           id="path12"
            sodipodi:nodetypes="ccc"
            inkscape:path-effect="#path-effect20"
-           inkscape:original-d="M 15,10.5 H 13 V 18" />
+           inkscape:original-d="m 14.5,10 h -2 v 9.333333" />
         <path
-           style="fill:none;stroke:url(#linearGradient6);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-           d="m 22,21.5 h 1.5 A 0.5,0.5 135 0 0 24,21 v -7"
-           id="path3"
+           style="fill:none;stroke:url(#linearGradient16);stroke-width:1.33333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           d="m 22.5,22 h 1.333333 A 0.66666667,0.66666667 135 0 0 24.5,21.333333 v -8.666666"
+           id="path13"
            sodipodi:nodetypes="ccc"
            inkscape:path-effect="#path-effect19"
-           inkscape:original-d="m 22,21.5 h 2 V 14" />
+           inkscape:original-d="m 22.5,22 h 2 v -9.333333" />
         <rect
-           style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:16;stroke-opacity:1"
-           id="rect3"
+           style="fill:none;stroke:#ffffff;stroke-width:1.33333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:16;stroke-opacity:1"
+           id="rect13"
            width="10"
-           height="4"
-           x="12"
-           y="19.5"
+           height="2.6666691"
+           x="12.5"
+           y="20.666666"
            ry="0.5" />
-        <circle
-           style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           id="circle3"
-           cx="17"
-           cy="10.5"
-           r="0.5" />
-        <circle
-           style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           id="circle4"
-           cx="14"
-           cy="21.5"
-           r="0.5" />
+        <ellipse
+           style="fill:#ffffff;stroke:none;stroke-width:0.666667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse13"
+           cx="16.5"
+           cy="10"
+           rx="0.66666633"
+           ry="0.66666669" />
+        <ellipse
+           style="fill:#ffffff;stroke:none;stroke-width:0.666667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse14"
+           cx="13.833333"
+           cy="22"
+           rx="0.66666633"
+           ry="0.66666669" />
       </g>
     </mask>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient15"
-       id="linearGradient5"
+       id="linearGradient14"
        gradientUnits="userSpaceOnUse"
-       x1="13.5"
-       y1="14"
-       x2="13.5"
-       y2="18.5" />
+       x1="13.166667"
+       y1="14.666667"
+       x2="13.166667"
+       y2="18.666666" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient15"
-       id="linearGradient6"
+       id="linearGradient16"
        gradientUnits="userSpaceOnUse"
        gradientTransform="rotate(180,18.5,16)"
-       x1="13.5"
-       y1="14"
-       x2="13.5"
-       y2="18.5" />
+       x1="13.166667"
+       y1="14.666667"
+       x2="13.166667"
+       y2="18.666666" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#121212;fill-opacity:1;stroke-width:0.999995;stroke-linecap:round;stroke-dashoffset:16"
+       style="fill:#121212;fill-opacity:1;stroke-width:1.49999;stroke-linecap:round;stroke-dashoffset:16"
        id="path1"
-       cx="16"
-       cy="16"
-       r="12" />
+       cx="24"
+       cy="24"
+       r="18" />
     <rect
-       style="fill:url(#linearGradient4);fill-opacity:1;stroke:none;stroke-width:0.727274;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:16"
+       style="fill:url(#linearGradient4);fill-opacity:1;stroke:none;stroke-width:1.09092;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:16"
        id="rect1"
-       width="16"
-       height="16"
-       x="8"
-       y="8"
+       width="24"
+       height="24"
+       x="12"
+       y="12"
        mask="url(#mask1)"
        inkscape:label="rect1" />
     <path
-       style="fill:none;fill-rule:nonzero;stroke:#e6e6e6;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 16.5,14.5 -1,1.5 h 1 l -1,1.5"
+       style="fill:none;fill-rule:nonzero;stroke:#e6e6e6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 25,21 -3,3 h 4 l -3,3"
        id="path6"
        sodipodi:nodetypes="cccc"
        inkscape:linked-fill="path5" />

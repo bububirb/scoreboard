@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://assets/icons/app_icons/app_icon_256px.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://assets/icons/app_icons/app_icon_64px.png"
-config/windows_native_icon="res://assets/icons/app_icons/app_icon_windows.ico"
+config/icon="res://assets/icons/app_icons/app_icon_128px.png"
+config/windows_native_icon="res://assets/icons/platform_icons/icon_windows.ico"
 
 [autoload]
 
